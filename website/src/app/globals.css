@@ -53,12 +53,12 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, var(--color-midnight-slate), var(--color-primary));
+  background-image: linear-gradient(to right, #E8D08D, var(--color-premium-gold));
 }
 
 .text-gradient-gold {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, var(--color-premium-gold), var(--color-cta));
+  background-image: linear-gradient(to right, #FDF7E2, var(--color-premium-gold));
 }
