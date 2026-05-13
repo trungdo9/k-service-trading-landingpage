@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,15 +8,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mobile.css" />
 </head>
+
 <body>
 
 
 
   <!-- ─────────── Navigation ─────────── -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
   <nav class="nav" id="siteNav">
     <a href="#top" class="emblem" aria-label="K Service Trading">
       <svg class="emblem-mark" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -29,7 +35,8 @@
         <circle cx="18" cy="20" r="0.8" fill="currentColor" opacity="0.8" />
         <circle cx="62" cy="20" r="0.8" fill="currentColor" opacity="0.8" />
         <!-- K letterform -->
-        <text x="40" y="53" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="36" font-weight="500" fill="currentColor" letter-spacing="0">K</text>
+        <text x="40" y="53" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="36"
+          font-weight="500" fill="currentColor" letter-spacing="0">K</text>
         <!-- laurel arcs -->
         <path d="M 16 56 Q 40 76 64 56" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.7" />
         <path d="M 22 60 Q 40 72 58 60" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.5" />
@@ -40,17 +47,89 @@
       <span class="emblem-text">K · SERVICE · TRADING</span>
     </a>
 
-    <div class="nav-menu">
-      <a href="#about">K</a>
-      <a href="#services">Service</a>
-      <a href="#trading">Trading</a>
-      <a href="#deltafarm">Deltafarm</a>
-      <a href="#ecotourism">Ecotourism</a>
-      <a href="#contact">Contact</a>
+    <!-- Hamburger Button (mobile only) -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <!-- Mobile menu header -->
+      <div class="nav-mobile-header">
+        <span class="nav-mobile-brand">K · SERVICE · TRADING</span>
+        <button class="nav-close" id="navClose" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="nav-item">
+        <a href="#about" class="nav-link">K</a>
+        <button class="nav-sub-toggle" aria-label="Expand K menu">
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="sub-menu">
+          <a href="/about">Giới thiệu doanh nghiệp</a>
+          <a href="/about">Lĩnh vực kinh doanh</a>
+          <a href="/about">Đối tác lý tưởng</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#services" class="nav-link">Service</a>
+        <button class="nav-sub-toggle" aria-label="Expand Service menu">
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="sub-menu">
+          <a href="/services">K-Counsel</a>
+          <a href="/services">K-Investment</a>
+          <a href="/services">K-Smartfarm</a>
+          <a href="/services">K-7 Entertainment</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#trading" class="nav-link">Trading</a>
+        <button class="nav-sub-toggle" aria-label="Expand Trading menu">
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="sub-menu">
+          <a href="/trading">FMCG</a>
+          <a href="/trading">AGRI (Nông sản)</a>
+          <a href="/trading">Thủy hải sản</a>
+          <a href="/trading">Năng lượng</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#deltafarm" class="nav-link">Deltafarm</a>
+        <button class="nav-sub-toggle" aria-label="Expand Deltafarm menu">
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="sub-menu">
+          <a href="/k-deltafarm/an-nam">Dự án AN NAM</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#ecotourism" class="nav-link">Ecotourism</a>
+        <button class="nav-sub-toggle" aria-label="Expand Ecotourism menu">
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="sub-menu">
+          <a href="/k-ecotourism">Eco-Tourism</a>
+          <a href="/k-ecotourism">Wellness</a>
+          <a href="/k-ecotourism">Duty Free</a>
+          <a href="/k-ecotourism">F&amp;B - Ẩm Thực</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
       <div class="lang-selector">
-        <a href="#en" aria-label="English"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/flags/4x3/gb.svg" alt="EN" class="flag-ico"></a>
-        <a href="#kr" aria-label="Korean"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/flags/4x3/kr.svg" alt="KR" class="flag-ico"></a>
-        <a href="#vn" aria-label="Vietnamese" class="active"><img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/flags/4x3/vn.svg" alt="VN" class="flag-ico"></a>
+        <a href="#en" aria-label="English"><img
+            src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/flags/4x3/gb.svg" alt="EN"
+            class="flag-ico"></a>
+        <a href="#kr" aria-label="Korean"><img
+            src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/flags/4x3/kr.svg" alt="KR"
+            class="flag-ico"></a>
+        <a href="#vn" aria-label="Vietnamese" class="active"><img
+            src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/flags/4x3/vn.svg" alt="VN"
+            class="flag-ico"></a>
       </div>
     </div>
   </nav>
@@ -105,13 +184,17 @@
       </div>
       <div class="k-body">
         <p class="lead reveal" style="--rd: .14s">
-          We bridge Vietnam, Korea and Southeast Asia — translating capital, products and ideas across borders with precision, transparency, and a commitment to long-term partnership.
+          We bridge Vietnam, Korea and Southeast Asia — translating capital, products and ideas across borders with
+          precision, transparency, and a commitment to long-term partnership.
         </p>
         <p class="reveal" style="--rd: .22s">
-          From premium ecotourism and smart agriculture to duty-free retail, integrated logistics, and strategic investment advisory, K Service Trading operates seven interlocking lines of business — designed to compound value across markets and generations.
+          From premium ecotourism and smart agriculture to duty-free retail, integrated logistics, and strategic
+          investment advisory, K Service Trading operates seven interlocking lines of business — designed to compound
+          value across markets and generations.
         </p>
         <p class="reveal" style="--rd: .3s">
-          Our six core values — Innovation · Sustainability · Professionalism · Transparency · International Cooperation · Efficiency — shape every partnership we enter.
+          Our six core values — Innovation · Sustainability · Professionalism · Transparency · International Cooperation
+          · Efficiency — shape every partnership we enter.
         </p>
         <div class="reveal" style="--rd: .38s">
           <a class="btn btn-outline-dark" href="#services">
@@ -120,22 +203,29 @@
         </div>
 
         <div class="metrics-row reveal" style="--rd: .46s">
-          <div class="metric"><span class="m-val">3</span><span class="m-lbl">International<br/>Markets</span></div>
-          <div class="metric"><span class="m-val">7</span><span class="m-lbl">Core Business<br/>Sectors</span></div>
-          <div class="metric"><span class="m-val">50+</span><span class="m-lbl">Strategic<br/>Partners</span></div>
-          <div class="metric"><span class="m-val">20%+</span><span class="m-lbl">Target ROI<br/>Mandate</span></div>
+          <div class="metric"><span class="m-val">3</span><span class="m-lbl">International<br />Markets</span></div>
+          <div class="metric"><span class="m-val">7</span><span class="m-lbl">Core Business<br />Sectors</span></div>
+          <div class="metric"><span class="m-val">50+</span><span class="m-lbl">Strategic<br />Partners</span></div>
+          <div class="metric"><span class="m-val">20%+</span><span class="m-lbl">Target ROI<br />Mandate</span></div>
         </div>
       </div>
     </div>
 
     <div class="lines reveal" style="--rd: .2s">
-      <div class="line"><span class="ix">01</span><span class="nm">Ecotourism</span><span class="dn">3.5–5★ resorts &amp; private VIP tours</span></div>
-      <div class="line"><span class="ix">02</span><span class="nm">Trading</span><span class="dn">Premium FMCG, agri &amp; logistics 4.0</span></div>
-      <div class="line"><span class="ix">03</span><span class="nm">Duty Free</span><span class="dn">VIP concierge at strategic gateways</span></div>
-      <div class="line"><span class="ix">04</span><span class="nm">Smartfarm</span><span class="dn">Korean container ag. for export</span></div>
-      <div class="line"><span class="ix">05</span><span class="nm">Counsel</span><span class="dn">Cross-border investment advisory</span></div>
-      <div class="line"><span class="ix">06</span><span class="nm">Investment</span><span class="dn">Strategic capital — 20%+ ROI mandate</span></div>
-      <div class="line"><span class="ix">07</span><span class="nm">K-7 Ent.</span><span class="dn">Cultural festivals &amp; global launches</span></div>
+      <div class="line"><span class="ix">01</span><span class="nm">Ecotourism</span><span class="dn">3.5–5★ resorts
+          &amp; private VIP tours</span></div>
+      <div class="line"><span class="ix">02</span><span class="nm">Trading</span><span class="dn">Premium FMCG, agri
+          &amp; logistics 4.0</span></div>
+      <div class="line"><span class="ix">03</span><span class="nm">Duty Free</span><span class="dn">VIP concierge at
+          strategic gateways</span></div>
+      <div class="line"><span class="ix">04</span><span class="nm">Smartfarm</span><span class="dn">Korean container ag.
+          for export</span></div>
+      <div class="line"><span class="ix">05</span><span class="nm">Counsel</span><span class="dn">Cross-border
+          investment advisory</span></div>
+      <div class="line"><span class="ix">06</span><span class="nm">Investment</span><span class="dn">Strategic capital —
+          20%+ ROI mandate</span></div>
+      <div class="line"><span class="ix">07</span><span class="nm">K-7 Ent.</span><span class="dn">Cultural festivals
+          &amp; global launches</span></div>
     </div>
   </section>
 
@@ -151,7 +241,8 @@
         </h2>
       </div>
       <p class="col-r reveal muted" style="--rd: .2s">
-        Four service practices working as one — from cross-border advisory and direct investment to smart agriculture and cultural production. Built for institutions seeking real growth, not noise.
+        Four service practices working as one — from cross-border advisory and direct investment to smart agriculture
+        and cultural production. Built for institutions seeking real growth, not noise.
       </p>
     </div>
 
@@ -170,7 +261,8 @@
           <span class="scope-icon">▸</span>
           <span>Institutional Grade · 5-Year Track</span>
         </div>
-        <p class="dn">Multi-sector capital counsel for international firms entering Vietnam — technology, manufacturing, hospitality real estate, logistics, renewables, agritech.</p>
+        <p class="dn">Multi-sector capital counsel for international firms entering Vietnam — technology, manufacturing,
+          hospitality real estate, logistics, renewables, agritech.</p>
         <span class="more">Counsel — Read More <span class="arr">→</span></span>
       </article>
 
@@ -187,7 +279,8 @@
           <span class="scope-icon">▸</span>
           <span>20%+ ROI Mandate · 50+ Partners</span>
         </div>
-        <p class="dn">Patient investment in green technology, digital infrastructure, digital health, and integrated farms — Cavendish bananas, medicinal botanicals, smart greenhouse.</p>
+        <p class="dn">Patient investment in green technology, digital infrastructure, digital health, and integrated
+          farms — Cavendish bananas, medicinal botanicals, smart greenhouse.</p>
         <span class="more">Investment — Read More <span class="arr">→</span></span>
       </article>
 
@@ -206,7 +299,8 @@
           <span class="scope-icon">▸</span>
           <span>Export-Ready · Korean Engineering</span>
         </div>
-        <p class="dn">Korean container farms producing Geumsil strawberries and premium mushrooms for export. Embedded inside resorts, malls, and universities as edu-tourism.</p>
+        <p class="dn">Korean container farms producing Geumsil strawberries and premium mushrooms for export. Embedded
+          inside resorts, malls, and universities as edu-tourism.</p>
         <span class="more">Smartfarm — Read More <span class="arr">→</span></span>
       </article>
 
@@ -224,7 +318,8 @@
           <span class="scope-icon">▸</span>
           <span>Regional Coverage · VIP Curated</span>
         </div>
-        <p class="dn">International festivals, product launches, and arts production — uniting commerce, tourism, film and cultural exchange across regional VIP audiences.</p>
+        <p class="dn">International festivals, product launches, and arts production — uniting commerce, tourism, film
+          and cultural exchange across regional VIP audiences.</p>
         <span class="more">Entertainment — Read More <span class="arr">→</span></span>
       </article>
 
@@ -241,7 +336,8 @@
         </h2>
       </div>
       <p class="col-r reveal" style="--rd: .2s">
-        Four pillars of trade — consumer goods, agricultural exports, seafood, and renewable energy — connected by a single integrated logistics spine. Every shipment traceable from source to shelf.
+        Four pillars of trade — consumer goods, agricultural exports, seafood, and renewable energy — connected by a
+        single integrated logistics spine. Every shipment traceable from source to shelf.
       </p>
     </div>
 
@@ -255,7 +351,8 @@
         <div class="tcard-body fmcg-body">
           <div class="fmcg-text">
             <h3 class="display">Premium <em>FMCG</em><br />&amp; imported goods.</h3>
-            <p class="desc">Global consumer brands distributed across Vietnam — cosmetics, F&amp;B, household, and personal care — with Korean and European cold-chain partners.</p>
+            <p class="desc">Global consumer brands distributed across Vietnam — cosmetics, F&amp;B, household, and
+              personal care — with Korean and European cold-chain partners.</p>
             <div class="tcard-metrics">
               <span class="metric-item">
                 <span class="metric-icon">📊</span>
@@ -294,7 +391,8 @@
         <div class="tcard-body agri-body">
           <div class="agri-text">
             <h3 class="display">Agricultural <em>exports.</em></h3>
-            <p class="desc">Organic Vietnamese rice, dried produce, and signature crops — Coconut and Durian — for export-grade global distribution.</p>
+            <p class="desc">Organic Vietnamese rice, dried produce, and signature crops — Coconut and Durian — for
+              export-grade global distribution.</p>
             <div class="tcard-metrics">
               <span class="metric-item">
                 <span class="metric-icon">📊</span>
@@ -319,11 +417,8 @@
               <li>Dried</li>
             </ul>
           </div>
-          <img
-            class="agri-photo"
-            src="uploads/Agricultural exports-0f6b14fd.png"
-            alt="Agricultural exports — rice, coconut, durian, dried produce"
-          />
+          <img class="agri-photo" src="uploads/Agricultural exports-0f6b14fd.png"
+            alt="Agricultural exports — rice, coconut, durian, dried produce" />
         </div>
       </article>
 
@@ -334,10 +429,12 @@
           <span class="tcard-status premium">Sustainable</span>
         </div>
         <div class="tcard-body seafood-body">
-          <img class="seafood-photo" src="uploads/k-trading-2.png" alt="Sustainable seafood — shrimp, fish, blue economy" />
+          <img class="seafood-photo" src="uploads/k-trading-2.png"
+            alt="Sustainable seafood — shrimp, fish, blue economy" />
           <div class="seafood-text">
             <h3 class="display">Shrimp, fish &amp; <em>blue economy</em>.</h3>
-            <p class="desc">Sustainably-sourced seafood from Vietnam's coastal provinces — shrimp, fish, and premium ocean products.</p>
+            <p class="desc">Sustainably-sourced seafood from Vietnam's coastal provinces — shrimp, fish, and premium
+              ocean products.</p>
             <div class="tcard-metrics">
               <span class="metric-item">
                 <span class="metric-icon">📊</span>
@@ -368,14 +465,16 @@
         <div class="tcard-body energy-body">
           <div class="energy-mark" aria-hidden="true">
             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="0.6"/>
-              <path d="M32 12 L32 52 M22 22 Q32 32 42 22 M22 42 Q32 52 42 42" stroke="currentColor" stroke-width="0.6" fill="none"/>
-              <circle cx="32" cy="32" r="3" fill="currentColor"/>
+              <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="0.6" />
+              <path d="M32 12 L32 52 M22 22 Q32 32 42 22 M22 42 Q32 52 42 42" stroke="currentColor" stroke-width="0.6"
+                fill="none" />
+              <circle cx="32" cy="32" r="3" fill="currentColor" />
             </svg>
           </div>
           <div class="energy-text">
             <h3 class="display">Wood pellets &amp; <em>green energy</em>.</h3>
-            <p class="desc">Biomass pellets and sustainable energy supply — for industrial and residential markets across Asia.</p>
+            <p class="desc">Biomass pellets and sustainable energy supply — for industrial and residential markets
+              across Asia.</p>
             <div class="tcard-metrics">
               <span class="metric-item">
                 <span class="metric-icon">📊</span>
@@ -413,20 +512,16 @@
         <span>Origin → Shelf</span>
         <button type="button" class="fmcg-film-fs" aria-label="View fullscreen">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M1 4V1H4M11 4V1H8M1 8V11H4M11 8V11H8" stroke="currentColor" stroke-width="1.1" stroke-linecap="square"/>
+            <path d="M1 4V1H4M11 4V1H8M1 8V11H4M11 8V11H8" stroke="currentColor" stroke-width="1.1"
+              stroke-linecap="square" />
           </svg>
           <span>Fullscreen</span>
         </button>
       </div>
       <div class="fmcg-film-frame">
-        <iframe
-          class="fmcg-film-iframe"
-          src="fmcg-animation.html?embed=1"
-          title="Premium FMCG · Imported Goods — origin to shelf"
-          loading="lazy"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+        <iframe class="fmcg-film-iframe" src="fmcg-animation.html?embed=1"
+          title="Premium FMCG · Imported Goods — origin to shelf" loading="lazy" frameborder="0"
+          allowfullscreen></iframe>
       </div>
       <div class="fmcg-film-meta bot">
         <span>VN · KR · EU · JP</span>
@@ -436,7 +531,7 @@
   </section>
 
   <script>
-    (function() {
+    (function () {
       const btn = document.querySelector('.fmcg-film-fs');
       const frame = document.querySelector('.fmcg-film-frame');
       if (!btn || !frame) return;
@@ -454,75 +549,89 @@
   </script>
 
   <!-- ─────────── 04 — DELTAFARM (AN NAM) ─────────── -->
-  <section id="deltafarm" class="section deltafarm cream wrap" data-screen-label="04 Deltafarm">
-    <div class="deltafarm-grid">
-      <div>
-        <div class="section-num reveal">04 — K-Deltafarm · Featured Project</div>
-        <h2 class="display reveal" style="--rd: .1s">
-          AN <em>NAM.</em>
-        </h2>
-        <p class="lede reveal" style="--rd: .18s">
-          Where the river finds the forest — an ecofarm and wellness destination in the Mekong Delta.
-        </p>
-        <p class="reveal" style="--rd: .26s">
-          AN NAM is K Service Trading's flagship Deltafarm — an integrated resort that braids smart agriculture, holistic wellness, and immersive nature experiences into a single, slow-living retreat.
-        </p>
-        <p class="reveal" style="--rd: .34s">
-          Designed for travelers who measure luxury in quietness, the project pairs Korean smart-farm engineering with Mekong-Delta ecology, supporting a regenerative model that nourishes soil, palate, and capital alike.
-        </p>
-        <div class="reveal" style="--rd: .42s" style="margin-top: 8px;">
-          <a class="btn btn-gold" href="#contact">
-            Investor Brief <span class="arr">→</span>
-          </a>
+  <section id="deltafarm" class="df-section" data-screen-label="04 Deltafarm">
+
+    <!-- Block 1: Cinematic Hero Banner -->
+    <div class="df-banner">
+      <div class="df-banner-bg" aria-hidden="true"></div>
+      <div class="df-banner-overlay" aria-hidden="true"></div>
+
+      <div class="df-banner-inner">
+        <div class="df-banner-meta reveal">
+          <span class="df-eyebrow">04 — K·Deltafarm · Featured Project</span>
+          <span class="df-location">Mekong Delta, VN</span>
+        </div>
+
+        <div class="df-banner-headline">
+          <h2 class="df-title reveal" style="--rd:.05s">AN</h2>
+          <h2 class="df-title df-title-italic reveal" style="--rd:.12s">NAM.</h2>
+        </div>
+
+        <div class="df-banner-body reveal" style="--rd:.22s">
+          <p class="df-lede">Where the river finds the forest —<br>an ecofarm &amp; wellness destination.</p>
+          <p class="df-sub">AN NAM pairs Korean smart-farm engineering with Mekong-Delta ecology — a regenerative resort
+            that nourishes soil, palate, and capital alike.</p>
+          <div class="df-cta-row">
+            <a class="btn btn-gold df-cta" href="#contact">Investor Brief <span class="arr">→</span></a>
+            <span class="df-cta-note">Replies within 24h · ICT</span>
+          </div>
         </div>
       </div>
 
-      <div class="deltafarm-plate reveal" style="--rd: .2s">
-        <div class="deltafarm-plate-meta">
-          <span>PROJECT — AN NAM</span>
-          <span>MEKONG DELTA, VN</span>
+      <!-- corner labels -->
+      <div class="df-corner df-corner-br" aria-hidden="true">ECO · LOW-CARBON RICE · PLATE 04</div>
+    </div>
+
+    <!-- Block 2: Stats / Pillars Rail -->
+    <div class="df-stats-rail">
+      <div class="df-stat reveal" style="--rd:.0s">
+        <span class="df-stat-num">01</span>
+        <span class="df-stat-name">Ecofarm</span>
+        <span class="df-stat-desc">Regenerative growing — fruit, herbs &amp; smart aquaculture. A working farm visitors
+          can walk.</span>
+        <span class="df-stat-bar" aria-hidden="true"></span>
+      </div>
+      <div class="df-stat reveal" style="--rd:.08s">
+        <span class="df-stat-num">02</span>
+        <span class="df-stat-name">Wellness</span>
+        <span class="df-stat-desc">Programs led by international practitioners — sleep, breath, longevity &amp; seasonal
+          nutrition.</span>
+        <span class="df-stat-bar" aria-hidden="true"></span>
+      </div>
+      <div class="df-stat reveal" style="--rd:.16s">
+        <span class="df-stat-num">03</span>
+        <span class="df-stat-name">Stay</span>
+        <span class="df-stat-desc">Low-rise villas embedded in canal landscapes — designed for stillness, not
+          spectacle.</span>
+        <span class="df-stat-bar" aria-hidden="true"></span>
+      </div>
+      <div class="df-stat reveal" style="--rd:.24s">
+        <span class="df-stat-num">04</span>
+        <span class="df-stat-name">Invest</span>
+        <span class="df-stat-desc">Investor-grade project with 20%+ ROI mandate — open to strategic capital
+          partners.</span>
+        <span class="df-stat-bar" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <!-- Block 3: Asymmetric Photo Mosaic -->
+    <div class="df-mosaic">
+      <div class="df-mosaic-large reveal" style="--rd:.05s">
+        <img src="uploads/annam-hero.png" alt="AN NAM — Mekong Delta aerial view at golden hour" loading="lazy" />
+        <span class="df-mosaic-label">Mekong Delta · Ecofarm</span>
+      </div>
+      <div class="df-mosaic-col">
+        <div class="df-mosaic-small reveal" style="--rd:.14s">
+          <img src="uploads/annam-wellness.png" alt="AN NAM — Open-air wellness pavilion" loading="lazy" />
+          <span class="df-mosaic-label">Wellness · Retreat</span>
         </div>
-        <img
-          class="deltafarm-photo"
-          src="uploads/du-an-an-nam.jpeg"
-          alt="AN NAM — Eco & Low Carbon Rice"
-        />
-        <span class="annam-shimmer" aria-hidden="true"></span>
-        <span class="annam-sparkles" aria-hidden="true">
-          <span style="--x:14%;--y:18%;--s:14px;--d:0s;"></span>
-          <span style="--x:78%;--y:22%;--s:18px;--d:.6s;"></span>
-          <span style="--x:32%;--y:48%;--s:10px;--d:1.2s;"></span>
-          <span style="--x:68%;--y:62%;--s:16px;--d:.3s;"></span>
-          <span style="--x:22%;--y:78%;--s:12px;--d:1.8s;"></span>
-          <span style="--x:84%;--y:84%;--s:14px;--d:.9s;"></span>
-          <span style="--x:50%;--y:30%;--s:8px;--d:2.4s;"></span>
-          <span style="--x:46%;--y:88%;--s:10px;--d:1.5s;"></span>
-          <span style="--x:8%;--y:50%;--s:12px;--d:2.1s;"></span>
-        </span>
-        <div class="deltafarm-plate-foot">
-          <span>PLATE 04</span>
-          <span>ECO · LOW-CARBON RICE</span>
+        <div class="df-mosaic-small reveal" style="--rd:.22s">
+          <img src="uploads/annam-farm.png" alt="AN NAM — Organic smart farm detail" loading="lazy" />
+          <span class="df-mosaic-label">Smartfarm · Organic</span>
         </div>
       </div>
     </div>
 
-    <div class="deltafarm-pillars reveal" style="--rd: .2s">
-      <div class="p">
-        <span class="ix">— 01</span>
-        <span class="nm">Ecofarm</span>
-        <span class="dn">Regenerative growing — fruit, herbs, smart aquaculture — with a working farm visitors can walk.</span>
-      </div>
-      <div class="p">
-        <span class="ix">— 02</span>
-        <span class="nm">Wellness</span>
-        <span class="dn">Programs led by international practitioners — sleep, breath, longevity, and seasonal nutrition.</span>
-      </div>
-      <div class="p">
-        <span class="ix">— 03</span>
-        <span class="nm">Stay</span>
-        <span class="dn">Low-rise villas embedded in canal landscapes — designed for stillness, not spectacle.</span>
-      </div>
-    </div>
   </section>
 
   <!-- ─────────── 05 — ECOTOURISM ─────────── -->
@@ -534,8 +643,10 @@
           A <em>quieter</em> kind of luxury.
         </h2>
       </div>
-      <p class="col-r reveal" style="--rd: .2s" style="font-size: 16.5px; color: var(--ink); max-width: 42ch; line-height: 1.6; justify-self: end;">
-        VIP concierge across Vietnam, Thailand, Bali, Singapore and Hong Kong — supported by a wellness practice and a duty-free network at strategic gateways.
+      <p class="col-r reveal" style="--rd: .2s"
+        style="font-size: 16.5px; color: var(--ink); max-width: 42ch; line-height: 1.6; justify-self: end;">
+        VIP concierge across Vietnam, Thailand, Bali, Singapore and Hong Kong — supported by a wellness practice and a
+        duty-free network at strategic gateways.
       </p>
     </div>
 
@@ -549,7 +660,8 @@
         </div>
         <div class="body">
           <h3>Eco-<em>tourism</em></h3>
-          <p class="desc">Curated tours and 3.5–5★ resort bookings across Vietnam and partner destinations — Thailand, Bali, Singapore, Hong Kong. VIP itineraries for KR, JP, EU, US guests.</p>
+          <p class="desc">Curated tours and 3.5–5★ resort bookings across Vietnam and partner destinations — Thailand,
+            Bali, Singapore, Hong Kong. VIP itineraries for KR, JP, EU, US guests.</p>
           <ul>
             <li>Resort Booking</li>
             <li>Private VIP Tours</li>
@@ -561,13 +673,15 @@
 
       <article class="eco-card dark has-photo reveal" style="--rd: .12s">
         <div class="top">
-          <img class="eco-photo" src="uploads/Wellness programs.png" alt="Wellness programs — sleep, longevity, recovery" />
+          <img class="eco-photo" src="uploads/Wellness programs.png"
+            alt="Wellness programs — sleep, longevity, recovery" />
           <span class="corner" style="color: var(--gold);">— 02</span>
           <span class="ix">SPECIALISTS</span>
         </div>
         <div class="body" style="background: var(--slate-2); color: var(--cream);">
           <h3 style="color: var(--cream);">Wellness <em style="color: var(--gold);">programs</em></h3>
-          <p class="desc" style="color: rgba(247,246,241,.7);">Sleep, longevity, and recovery programs led by leading international practitioners — for executives, athletes, and high-net-worth families.</p>
+          <p class="desc" style="color: rgba(247,246,241,.7);">Sleep, longevity, and recovery programs led by leading
+            international practitioners — for executives, athletes, and high-net-worth families.</p>
           <ul style="color: rgba(247,246,241,.7);">
             <li style="color: rgba(247,246,241,.7);">Sleep Architecture</li>
             <li>Breath &amp; Recovery</li>
@@ -588,7 +702,8 @@
         </div>
         <div class="body">
           <h3>K-Duty <em>Free</em></h3>
-          <p class="desc">Premium boutique network at Lạng Sơn and Mộc Bài gateways — Korean / European / American beauty, F&amp;B, fashion, fragrance, and Vietnamese specialty goods.</p>
+          <p class="desc">Premium boutique network at Lạng Sơn and Mộc Bài gateways — Korean / European / American
+            beauty, F&amp;B, fashion, fragrance, and Vietnamese specialty goods.</p>
           <ul>
             <li>K-Beauty &amp; Health</li>
             <li>Premium F&amp;B</li>
@@ -637,7 +752,7 @@
 
   <!-- ─────────── CONTACT ─────────── -->
   <section id="contact" class="section contact dark wrap" data-screen-label="06 Contact">
-    
+
     <div class="contact-grid">
 
       <div>
@@ -646,7 +761,8 @@
           Begin the <em>conversation.</em>
         </h2>
         <p class="lede reveal" style="--rd: .2s">
-          Whether you are entering Vietnam, scaling a regional partnership, or seeking institutional capital — we'd be glad to listen.
+          Whether you are entering Vietnam, scaling a regional partnership, or seeking institutional capital — we'd be
+          glad to listen.
         </p>
 
         <div class="reveal" style="--rd: .28s">
@@ -669,7 +785,8 @@
         </div>
       </div>
 
-      <form class="form reveal" style="--rd: .14s" onsubmit="event.preventDefault(); this.querySelector('button[type=submit]').textContent='Sent — We will reply shortly';">
+      <form class="form reveal" style="--rd: .14s"
+        onsubmit="event.preventDefault(); this.querySelector('button[type=submit]').textContent='Sent — We will reply shortly';">
         <div class="row">
           <label>Full Name <input type="text" placeholder="Your name" required /></label>
           <label>Company <input type="text" placeholder="Organization" /></label>
@@ -702,7 +819,8 @@
     <div class="top">
       <div class="brand">
         <div class="name">K Service Trading</div>
-        <p>A strategic gateway between Vietnam, Korea and Southeast Asia — investment, trade, and eco-luxury hospitality, built for the long term.</p>
+        <p>A strategic gateway between Vietnam, Korea and Southeast Asia — investment, trade, and eco-luxury
+          hospitality, built for the long term.</p>
       </div>
       <div>
         <h4>Service</h4>
@@ -741,9 +859,15 @@
 
 
   <!-- ─────────── React + Tweaks panel ─────────── -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+    integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+    integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+    integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+    crossorigin="anonymous"></script>
   <script src="image-slot.js"></script>
   <script type="text/babel" src="tweaks-panel.jsx"></script>
   <script type="text/babel" src="app.jsx"></script>
@@ -786,7 +910,58 @@
     }, 1500);
   </script>
 
+  <!-- ── Hamburger & Accordion Navigation (Mobile) ── -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('navToggle');
+      const close  = document.getElementById('navClose');
+      const menu   = document.getElementById('navMenu');
+      const overlay= document.getElementById('navOverlay');
+      const nav    = document.getElementById('siteNav');
+
+      function openMenu() {
+        menu.classList.add('open');
+        overlay.classList.add('active');
+        nav.classList.add('menu-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        menu.classList.remove('open');
+        overlay.classList.remove('active');
+        nav.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) toggle.addEventListener('click', openMenu);
+      if (close)  close.addEventListener('click', closeMenu);
+      if (overlay) overlay.addEventListener('click', closeMenu);
+
+      // Close on nav-link click (anchor links)
+      menu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Accordion sub-menus (mobile only)
+      menu.querySelectorAll('.nav-sub-toggle').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const item = this.closest('.nav-item');
+          const isOpen = item.classList.contains('sub-open');
+          // Close all
+          menu.querySelectorAll('.nav-item.sub-open').forEach(el => el.classList.remove('sub-open'));
+          if (!isOpen) item.classList.add('sub-open');
+        });
+      });
+
+      // Keyboard: Escape closes menu
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+      });
+    })();
+  </script>
+
 </body>
+
 </html>
-
-
