@@ -46,7 +46,7 @@ function ApplyTweaks({ t }) {
     const tape = document.querySelector('.tape');
     if (tape) tape.style.display = t.tickerOn ? '' : 'none';
     const navEl = document.querySelector('.nav');
-    if (navEl) navEl.style.top = t.tickerOn ? '38px' : '0';
+    if (navEl) navEl.style.top = (t.tickerOn && tape) ? '38px' : '0';
   }, [t]);
   return null;
 }
