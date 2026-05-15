@@ -898,7 +898,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    // reveal-on-scroll
+    // reveal-on-scroll (Phase 1 + Phase 2)
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -907,12 +907,13 @@
         }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    // Observe both individual reveals and stagger containers
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
 
     // Failsafe: if the page is loaded hidden / paint-throttled, IO won't fire.
     // Reveal anything currently in viewport on visibilitychange, and force-reveal everything after 1.5s.
     const sweepInView = () => {
-      document.querySelectorAll('.reveal:not(.in)').forEach(el => {
+      document.querySelectorAll('.reveal:not(.in), .reveal-stagger:not(.in)').forEach(el => {
         const r = el.getBoundingClientRect();
         if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
       });
@@ -921,7 +922,7 @@
       if (!document.hidden) sweepInView();
     });
     setTimeout(() => {
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('in'));
     }, 1500);
 
     // parallax scroll tracking (Phase 2)
