@@ -2661,6 +2661,156 @@ footer .bar {
   animation-delay: calc(var(--index, 0) * var(--stagger-md));
 }
 
+/* ───── PHASE 3: HOVER EFFECTS & MICRO-INTERACTIONS ───── */
+
+/* Step 1: Card Hover Lift Effects */
+
+.service-card {
+  transition: transform 250ms var(--ease-in-out),
+              box-shadow 250ms var(--ease-in-out);
+  cursor: pointer;
+}
+
+.service-card:hover,
+.service-card:focus-visible {
+  transform: translateY(-8px) var(--gpu-hint);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.eco-card {
+  transition: transform 250ms var(--ease-in-out),
+              box-shadow 250ms var(--ease-in-out);
+  cursor: pointer;
+}
+
+.eco-card:hover,
+.eco-card:focus-visible {
+  transform: translateY(-6px) var(--gpu-hint);
+  box-shadow: 0 12px 28px rgba(200, 158, 47, 0.08);
+}
+
+.tcard {
+  transition: transform 250ms var(--ease-in-out),
+              box-shadow 250ms var(--ease-in-out);
+  cursor: pointer;
+}
+
+.tcard:hover,
+.tcard:focus-visible {
+  transform: translateY(-8px) var(--gpu-hint);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Step 2: Button Hover States */
+
+.btn {
+  transition: background-color 200ms var(--ease-in-out),
+              color 200ms var(--ease-in-out),
+              box-shadow 200ms var(--ease-in-out);
+  position: relative;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--gold);
+  box-shadow: 0 6px 16px rgba(200, 158, 47, 0.3);
+}
+
+.btn .arr {
+  display: inline-block;
+  transition: transform 200ms var(--ease-in-out);
+}
+
+.btn:hover .arr,
+.btn:focus-visible .arr {
+  transform: translateX(4px);
+}
+
+/* Step 3: Link Underline Animation */
+
+.nav-link,
+.btn-outline-dark,
+a:not(.emblem) {
+  position: relative;
+  transition: color 200ms var(--ease-in-out);
+}
+
+a:not(.emblem)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 300ms var(--ease-out-cubic);
+}
+
+a:not(.emblem):hover::after,
+a:not(.emblem):focus-visible::after {
+  width: 100%;
+}
+
+/* Step 4: Icon Animations */
+
+.service-card .ico,
+.eco-card .corner {
+  transition: transform 300ms var(--ease-in-out);
+}
+
+.service-card:hover .ico,
+.service-card:focus-visible .ico {
+  transform: rotate(5deg) scale(1.08);
+}
+
+.eco-card:hover .corner,
+.eco-card:focus-visible .corner {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Step 5: Form Field Focus States */
+
+input, textarea, select {
+  transition: border-color 200ms var(--ease-in-out),
+              box-shadow 200ms var(--ease-in-out);
+  border-bottom: 2px solid var(--rule);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-bottom-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(200, 158, 47, 0.12);
+  outline: none;
+}
+
+label:has(> input:focus),
+label:has(> textarea:focus) {
+  color: var(--gold);
+}
+
+/* Step 6: Focus Visibility & Accessibility */
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Remove default outline, use custom gold focus ring */
+*:focus {
+  outline: none;
+}
+
+/* Touch device active states (match hover behavior) */
+@media (hover: none) and (pointer: coarse) {
+  .service-card:active,
+  .eco-card:active,
+  .tcard:active,
+  .btn:active {
+    transform: translateY(-4px) var(--gpu-hint);
+  }
+}
+
 /* ───── PARALLAX ELEMENTS FOR DEPTH (SCROLL-LINKED) ───── */
 
 .parallax-element {
