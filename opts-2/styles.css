@@ -10,9 +10,9 @@
   --cream: #F7F6F1;
   --cream-2: #EFEBDF;
   --paper: #FFFFFF;
-  --gold: #D1B05A;
-  --gold-soft: #B89545;
-  --gold-glow: rgba(209, 176, 90, .12);
+  --gold: #C89E2F;
+  --gold-soft: #A67F28;
+  --gold-glow: rgba(200, 158, 47, .12);
   --ink: #2C3531;
   --ink-2: #5C6661;
   --rule: rgba(44, 53, 49, .14);
@@ -313,17 +313,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   pointer-events: none;
   z-index: 2;
 }
-.hero::after {
-  /* fine grain */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  opacity: .55;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  z-index: 3;
-}
+/* Removed fine grain effect */
 
 /* Full Screen Image layout */
 .hero-split {
@@ -373,14 +363,15 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   z-index: 2;
 }
 
-.hero-panel-right::before {
+/* Removed blur/overlay layer from hero background */
+/*.hero-panel-right::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.15); /* Soft overlay for global contrast */
+  background: rgba(0, 0, 0, 0.15);
   z-index: 1;
   pointer-events: none;
-}
+}*/
 
 .hero-grid {
   position: relative;
@@ -425,11 +416,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   color: #FFFFFF;
   text-wrap: balance;
 }
-.hero-title {
-  text-shadow:
-    0 2px 12px rgba(0,0,0, 0.80),
-    0 4px 24px rgba(0,0,0, 0.50);
-}
+/* Removed text-shadow from hero title */
 .hero h1 .accent {
   color: var(--gold);
   font-style: italic;
@@ -510,22 +497,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   box-shadow: 0 6px 32px rgba(245,217,122,0.35), 0 2px 10px rgba(0,0,0,0.25);
 }
 
-/* ── Hero bottom fade transition ── */
-.hero-bottom-fade {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: clamp(120px, 18vh, 220px);
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(247, 246, 241, 0.55) 60%,
-    var(--cream) 100%
-  );
-  pointer-events: none;
-  z-index: 5;
-}
+/* Removed hero bottom fade */
 
 /* Scrims */
 .hero-scrim-v {
@@ -827,13 +799,13 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   position: relative;
   border-radius: 4px;
   overflow: hidden;
-  background: var(--slate);
-  color: var(--cream);
+  background: var(--cream);
+  color: var(--ink);
   padding: 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: .5px solid rgba(0, 0, 0, .08);
+  border: .5px solid var(--rule);
   transition: transform .5s cubic-bezier(.2,.8,.2,1);
 }
 .tcard.alt { background: var(--cream-2); color: var(--ink); }
@@ -873,7 +845,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 .tcard .desc {
   font-size: 14.5px;
   line-height: 1.55;
-  color: rgba(247, 246, 241, .7);
+  color: var(--ink-2);
   max-width: 36ch;
 }
 .tcard.alt .desc, .tcard.alt2 .desc { color: var(--ink-2); }
@@ -885,8 +857,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 6px 10px;
-  border: .5px solid rgba(209, 176, 90, .35);
-  color: rgba(247, 246, 241, .8);
+  border: .5px solid rgba(200, 158, 47, .35);
+  color: var(--ink-2);
   border-radius: 999px;
 }
 .tcard.alt ul.tags li, .tcard.alt2 ul.tags li {
@@ -1610,11 +1582,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   justify-content: center;
   border-bottom: .5px solid var(--rule);
 }
-.eco-card.dark .top {
-  background:
-    repeating-linear-gradient(135deg, rgba(209,176,90,.06) 0 2px, transparent 2px 10px),
-    linear-gradient(180deg, #1F2A26 0%, #131918 100%);
-}
+/* Removed dark background style for eco-card */
 .eco-card .top .ph {
   font-family: var(--mono);
   font-size: 10px;
@@ -1622,7 +1590,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   text-transform: uppercase;
   color: rgba(44, 53, 49, .55);
 }
-.eco-card.dark .top .ph { color: rgba(209, 176, 90, .65); }
+/* Removed dark style */
 .eco-card .top .corner {
   position: absolute;
   top: 14px; left: 14px;
@@ -1640,7 +1608,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   letter-spacing: 0.18em;
   color: var(--ink-2);
 }
-.eco-card.dark .top .ix { color: rgba(247,246,241,.55); }
+/* Removed dark style */
 .eco-card .body {
   padding: 28px 26px 30px;
   display: flex;
@@ -1738,8 +1706,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 
 /* form */
 .form {
-  background: var(--slate-2);
-  border: .5px solid rgba(209, 176, 90, .2);
+  background: var(--cream);
+  border: .5px solid var(--rule);
   border-radius: 4px;
   padding: 36px 32px;
   display: flex;
@@ -1756,7 +1724,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(209, 176, 90, .85);
+  color: var(--gold);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1765,8 +1733,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   appearance: none;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid rgba(247, 246, 241, .25);
-  color: var(--cream);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
   font: 16px/1.5 var(--body);
   padding: 8px 0;
   outline: none;
@@ -1777,7 +1745,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   border-bottom-color: var(--gold);
 }
 .form textarea { resize: vertical; min-height: 80px; }
-.form input::placeholder, .form textarea::placeholder { color: rgba(247, 246, 241, .35); }
+.form input::placeholder, .form textarea::placeholder { color: var(--ink-2); }
 
 .form-foot {
   display: flex;
@@ -1790,13 +1758,13 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(247, 246, 241, .4);
+  color: var(--ink-2);
 }
 
 /* ───── FOOTER ───── */
 footer {
-  background: #0E1311;
-  color: rgba(247, 246, 241, .6);
+  background: var(--cream);
+  color: var(--ink-2);
   padding: 64px var(--pad-x) 28px;
   font-family: var(--mono);
   font-size: 11px;
@@ -1817,14 +1785,23 @@ footer h4 {
   font-weight: 600;
 }
 footer ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+footer ul li a { color: var(--ink-2); }
 footer ul li a:hover { color: var(--gold); }
+.footer-emblem {
+  width: 48px;
+  height: 48px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: block;
+}
+
 footer .brand .name {
   font-family: var(--display);
   font-size: 28px;
   letter-spacing: -0.005em;
   text-transform: none;
   font-weight: 500;
-  color: var(--cream);
+  color: var(--ink);
   margin-bottom: 12px;
 }
 footer .brand p {
@@ -1833,18 +1810,18 @@ footer .brand p {
   letter-spacing: 0;
   text-transform: none;
   line-height: 1.55;
-  color: rgba(247, 246, 241, .55);
+  color: var(--ink-2);
   margin: 0;
   max-width: 36ch;
 }
 footer .bar {
-  border-top: .5px solid rgba(247, 246, 241, .12);
+  border-top: .5px solid var(--rule);
   padding-top: 22px;
   display: flex;
   justify-content: space-between;
   font-size: 10px;
   letter-spacing: 0.18em;
-  color: rgba(247, 246, 241, .35);
+  color: var(--ink-2);
 }
 
 /* ───── P0 COMPONENTS ───── */
@@ -1975,8 +1952,8 @@ footer .bar {
   flex-wrap: wrap;
   margin: 16px 0 12px 0;
   padding: 12px 0;
-  border-top: 1px solid rgba(247, 246, 241, .12);
-  border-bottom: 1px solid rgba(247, 246, 241, .12);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 
 .metric-item {
@@ -2005,7 +1982,7 @@ footer .bar {
   font-size: 8.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(247, 246, 241, .6);
+  color: var(--ink-2);
   font-weight: 500;
 }
 
