@@ -4,6 +4,7 @@
 ─────────────────────────────────────────────────────────── */
 
 :root {
+  /* ── Colors ── */
   --slate: #161D1A;
   --slate-2: #1A2421;
   --slate-3: #243029;
@@ -18,13 +19,37 @@
   --rule: rgba(44, 53, 49, .14);
   --rule-dark: rgba(247, 246, 241, .14);
 
+  /* ── Typography ── */
   --display: "Cormorant Garamond", "Playfair Display", "Lora", Georgia, serif;
   --body: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
+  /* ── Spacing ── */
   --pad-x: clamp(24px, 5vw, 96px);
   --gap-y: clamp(96px, 14vw, 200px);
   --section-y: clamp(120px, 14vw, 200px);
+
+  /* ── Animation Durations (Premium Slowness) ── */
+  --anim-fast: 150ms;
+  --anim-normal: 400ms;
+  --anim-slow: 600ms;
+  --anim-premium: 800ms;
+
+  /* ── Easing Functions (Premium Feel) ── */
+  --ease-out-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-sine-in-out: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ── Stagger Offsets ── */
+  --stagger-sm: 40ms;
+  --stagger-md: 60ms;
+  --stagger-lg: 80ms;
+
+  /* ── GPU Acceleration Hint ── */
+  --gpu-hint: translateZ(0);
 }
 
 * { box-sizing: border-box; }
@@ -498,6 +523,182 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 }
 
 /* Removed hero bottom fade */
+
+/* ───── ANIMATION SYSTEM (Phase 01 - Motion Design Foundations) ───── */
+
+/* @keyframes Primitives */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes goldGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(200, 158, 47, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(200, 158, 47, 0.4); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes revealLeft {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+
+/* Utility Animation Classes */
+
+/* ── Reveal Animations (Scroll-triggered) ── */
+.anim-reveal {
+  opacity: 0;
+  transform: translateY(16px) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.anim-reveal.in {
+  opacity: 1;
+  transform: translateY(0) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  transition-delay: var(--rd, 0ms);
+}
+
+/* ── Fade Animations ── */
+.anim-fade-in {
+  animation: fadeIn var(--anim-normal) var(--ease-out-cubic) forwards;
+}
+
+.anim-fade-slow {
+  animation: fadeIn var(--anim-slow) var(--ease-out-cubic) forwards;
+}
+
+/* ── Slide Animations ── */
+.anim-slide-up {
+  animation: slideUp var(--anim-normal) var(--ease-out-cubic) forwards;
+}
+
+.anim-slide-down {
+  animation: slideDown var(--anim-normal) var(--ease-out-cubic) forwards;
+}
+
+.anim-slide-left {
+  animation: slideLeft var(--anim-normal) var(--ease-out-cubic) forwards;
+}
+
+.anim-slide-right {
+  animation: slideRight var(--anim-normal) var(--ease-out-cubic) forwards;
+}
+
+/* ── Scale Animations ── */
+.anim-scale-in {
+  animation: scaleIn var(--anim-normal) var(--ease-out-cubic) forwards;
+}
+
+.anim-scale-up {
+  animation: scaleUp var(--anim-slow) var(--ease-out-cubic) forwards;
+}
+
+/* ── Hover Effects ── */
+.anim-hover-lift {
+  transition: transform var(--anim-fast) var(--ease-in-out),
+              box-shadow var(--anim-fast) var(--ease-in-out);
+}
+
+.anim-hover-lift:hover {
+  transform: translateY(-8px) var(--gpu-hint);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.anim-hover-glow {
+  transition: box-shadow var(--anim-normal) var(--ease-in-out);
+}
+
+.anim-hover-glow:hover {
+  box-shadow: 0 0 20px rgba(200, 158, 47, 0.3);
+}
+
+.anim-hover-fade {
+  transition: opacity var(--anim-fast) var(--ease-in-out);
+}
+
+.anim-hover-fade:hover {
+  opacity: 0.8;
+}
+
+/* ── Floating/Pulse Animations ── */
+.anim-float {
+  animation: float 4s var(--ease-in-out) infinite;
+}
+
+.anim-pulse {
+  animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+/* ── Gold Glow Accent ── */
+.anim-glow-gold {
+  animation: goldGlow 3s var(--ease-in-out) infinite;
+}
+
+/* ── Shimmer Effect ── */
+.anim-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ── Stagger Utilities (for children) ── */
+.anim-stagger-sm > * {
+  animation-delay: calc(var(--stagger-sm) * var(--index, 0));
+}
+
+.anim-stagger-md > * {
+  animation-delay: calc(var(--stagger-md) * var(--index, 0));
+}
+
+.anim-stagger-lg > * {
+  animation-delay: calc(var(--stagger-lg) * var(--index, 0));
+}
 
 /* Scrims */
 .hero-scrim-v {
@@ -2309,5 +2510,250 @@ footer .bar {
     padding: 3px 6px;
     top: 10px;
     right: 10px;
+  }
+}
+
+/* ───── PHASE 2: SCROLL-TRIGGERED REVEAL VARIANTS ───── */
+
+/* Base reveal (slide-up) - existing pattern enhanced */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  transition-delay: var(--rd, 0ms);
+}
+
+/* Variant: fade only (no translation) */
+.reveal--fade {
+  opacity: 0;
+  transform: none;
+}
+
+.reveal--fade.in {
+  opacity: 1;
+  transition: opacity var(--anim-normal) var(--ease-out-cubic);
+  transition-delay: var(--rd, 0ms);
+}
+
+/* Variant: scale + fade (zoom in effect) */
+.reveal--scale {
+  opacity: 0;
+  transform: scale(0.9) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.reveal--scale.in {
+  opacity: 1;
+  transform: scale(1) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  transition-delay: var(--rd, 0ms);
+}
+
+/* Variant: slide from left */
+.reveal--slide-left {
+  opacity: 0;
+  transform: translateX(-24px) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.reveal--slide-left.in {
+  opacity: 1;
+  transform: translateX(0) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  transition-delay: var(--rd, 0ms);
+}
+
+/* Variant: slide from right */
+.reveal--slide-right {
+  opacity: 0;
+  transform: translateX(24px) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.reveal--slide-right.in {
+  opacity: 1;
+  transform: translateX(0) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  transition-delay: var(--rd, 0ms);
+}
+
+/* ───── STAGGER SYSTEM FOR SEQUENTIAL CHILD ANIMATIONS ───── */
+
+/* Base stagger: sequential reveal of children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.reveal-stagger.in > * {
+  opacity: 1;
+  transform: translateY(0) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  animation-delay: calc(var(--index, 0) * var(--stagger-md));
+}
+
+/* Tight stagger (40ms offsets) - faster cascades for lists/grids */
+.reveal-stagger--tight > * {
+  opacity: 0;
+  transform: translateY(16px) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.reveal-stagger--tight.in > * {
+  opacity: 1;
+  transform: translateY(0) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  animation-delay: calc(var(--index, 0) * var(--stagger-sm));
+}
+
+/* Loose stagger (80ms offsets) - premium slowness for hero/about sections */
+.reveal-stagger--loose > * {
+  opacity: 0;
+  transform: translateY(16px) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.reveal-stagger--loose.in > * {
+  opacity: 1;
+  transform: translateY(0) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  animation-delay: calc(var(--index, 0) * var(--stagger-lg));
+}
+
+/* Fade stagger variant (no translation, staggered opacity) */
+.reveal-stagger--fade > * {
+  opacity: 0;
+  will-change: opacity;
+}
+
+.reveal-stagger--fade.in > * {
+  opacity: 1;
+  transition: opacity var(--anim-normal) var(--ease-out-cubic);
+  animation-delay: calc(var(--index, 0) * var(--stagger-md));
+}
+
+/* Scale stagger variant (zoom in with stagger) */
+.reveal-stagger--scale > * {
+  opacity: 0;
+  transform: scale(0.9) var(--gpu-hint);
+  will-change: opacity, transform;
+}
+
+.reveal-stagger--scale.in > * {
+  opacity: 1;
+  transform: scale(1) var(--gpu-hint);
+  transition: opacity var(--anim-normal) var(--ease-out-cubic),
+              transform var(--anim-normal) var(--ease-out-cubic);
+  animation-delay: calc(var(--index, 0) * var(--stagger-md));
+}
+
+/* ───── PARALLAX ELEMENTS FOR DEPTH (SCROLL-LINKED) ───── */
+
+.parallax-element {
+  transform: translateY(calc(var(--scroll, 0px) * 0.05)) var(--gpu-hint);
+  will-change: transform;
+}
+
+/* Desktop parallax enabled; mobile disabled via media query below */
+
+/* ───── COUNTER ANIMATION (NUMBER REVEALS) ───── */
+
+/* Counter elements display animated numbers */
+.counter {
+  font-variant-numeric: tabular-nums;
+  will-change: opacity;
+}
+
+.counter.in {
+  animation: fadeIn var(--anim-normal) var(--ease-out-cubic) forwards;
+  animation-delay: var(--rd, 0ms);
+}
+
+/* Counter with special styling (gold, serif) */
+.counter-metric {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5em;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ───── MOBILE ANIMATION OPTIMIZATIONS ───── */
+@media (max-width: 768px) {
+  :root {
+    /* Reduce animation durations by 20% on mobile */
+    --anim-fast: 120ms;
+    --anim-normal: 320ms;
+    --anim-slow: 480ms;
+    --anim-premium: 640ms;
+  }
+
+  /* Disable parallax on mobile (janky, battery drain) */
+  .parallax-element {
+    transform: none !important;
+  }
+
+  /* Reduce floating animation on mobile */
+  .anim-float {
+    animation: float 6s var(--ease-in-out) infinite;
+  }
+
+  /* Simplify hover states on touch devices */
+  .anim-hover-lift:hover {
+    transform: translateY(-4px) var(--gpu-hint);
+  }
+
+  /* Disable shimmer on mobile (expensive) */
+  .anim-shimmer {
+    animation: none;
+  }
+}
+
+/* ───── ACCESSIBILITY: REDUCED MOTION ───── */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all animations for users who prefer reduced motion */
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Ensure interactive elements still respond to user actions */
+  .anim-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .anim-hover-lift,
+  .anim-hover-glow,
+  .anim-hover-fade {
+    transition: none !important;
+  }
+
+  .anim-hover-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .anim-hover-glow:hover {
+    box-shadow: none;
+  }
+
+  .anim-hover-fade:hover {
+    opacity: 1;
   }
 }
