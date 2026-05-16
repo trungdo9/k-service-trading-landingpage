@@ -843,7 +843,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   border-top: 1px solid var(--rule);
 }
 .metric { display: flex; flex-direction: column; gap: 8px; }
-.metric .m-val { font-family: var(--display); font-size: 36px; line-height: 1; color: var(--gold); }
+.metric .m-val { font-family: var(--display); font-size: 42px; line-height: 1; color: var(--gold); }
 .metric .m-lbl { font-size: 13px; line-height: 1.4; color: var(--ink-2); }
 
 /* business lines list */
@@ -1174,17 +1174,17 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 .tcard.seafood-card .seafood-photo { width: 100%; height: 240px; object-fit: cover; border: 0; border-radius: 0; border-bottom: .5px solid rgba(44,53,49,.12); flex-shrink: 0; }
 .tcard.seafood-card .seafood-text { padding: 32px 28px 30px; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; }
 
-/* ── Energy band (full-width row 3) ── */
-.tcard.energy-card { padding: 0; overflow: hidden; background: var(--slate-2); }
-.tcard.energy-card .tcard-top { position: absolute; top: 24px; left: 32px; right: 32px; z-index: 3; color: rgba(247,246,241,.6); }
+/* ── Energy card (light background, aligned with FMCG/AGRI/Seafood) ── */
+.tcard.energy-card { padding: 0; overflow: hidden; background: var(--cream); }
+.tcard.energy-card .tcard-top { position: absolute; top: 24px; left: 32px; right: 32px; z-index: 3; color: var(--ink-2); }
 .tcard.energy-card .tcard-body.energy-body { display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: center; padding: 64px 56px 48px; min-height: 240px; }
-.tcard.energy-card .energy-mark { width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; color: rgba(209,176,90,.55); border: .5px solid rgba(209,176,90,.25); border-radius: 50%; margin: 0 auto; position: relative; }
-.tcard.energy-card .energy-mark::before { content: ""; position: absolute; inset: -16px; border: .5px solid rgba(209,176,90,.12); border-radius: 50%; animation: energy-pulse 4s ease-in-out infinite; }
+.tcard.energy-card .energy-mark { width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; color: var(--gold); border: .5px solid rgba(200, 158, 47, 0.2); border-radius: 50%; margin: 0 auto; position: relative; }
+.tcard.energy-card .energy-mark::before { content: ""; position: absolute; inset: -16px; border: .5px solid rgba(200, 158, 47, 0.12); border-radius: 50%; animation: energy-pulse 4s ease-in-out infinite; }
 @keyframes energy-pulse { 0%, 100% { transform: scale(1); opacity: .4; } 50% { transform: scale(1.06); opacity: .8; } }
 .tcard.energy-card .energy-mark svg { width: 100%; height: 100%; }
-.tcard.energy-card h3 { font-size: clamp(36px, 3.6vw, 56px); margin-bottom: 14px; }
-.tcard.energy-card .desc { color: rgba(247,246,241,.72); max-width: 56ch; font-size: 15.5px; }
-.tcard.energy-card ul.tags li { color: rgba(247,246,241,.85); border-color: rgba(209,176,90,.3); }
+.tcard.energy-card h3 { font-size: clamp(36px, 3.6vw, 56px); margin-bottom: 14px; color: var(--ink); }
+.tcard.energy-card .desc { color: var(--ink-2); max-width: 56ch; font-size: 15.5px; }
+.tcard.energy-card ul.tags li { color: var(--ink-2); border-color: rgba(200, 158, 47, 0.15); }
 
 @media (max-width: 1100px) {
   .tcard.fmcg-card .tcard-body.fmcg-body,
