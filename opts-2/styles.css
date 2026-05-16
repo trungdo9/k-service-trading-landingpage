@@ -189,7 +189,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 .nav.scrolled::before {
   opacity: 0; /* Hide gradient when scrolled since nav has dark background */
 }
-.nav a, .nav-menu {
+.nav a, .nav-menu, .nav-toggle {
   pointer-events: auto;
 }
 .nav.scrolled {

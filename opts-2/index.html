@@ -967,7 +967,15 @@
         document.body.style.overflow = '';
       }
 
-      if (toggle) toggle.addEventListener('click', openMenu);
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          if (menu.classList.contains('open')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+      }
       if (close)  close.addEventListener('click', closeMenu);
       if (overlay) overlay.addEventListener('click', closeMenu);
 
