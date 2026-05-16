@@ -1849,10 +1849,11 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 
 /* ───── CONTACT ───── */
 .contact {
-  background: var(--slate) url('uploads/hero_hcm_bg.png') center / cover no-repeat;
+  background: var(--slate) url('uploads/hero_hcm_bg.png') center / cover no-repeat fixed;
   color: var(--cream);
   position: relative;
   overflow: hidden;
+  background-attachment: fixed;
 }
 
 /* Dark overlay for text readability */
@@ -2720,6 +2721,11 @@ footer .bar {
   /* Disable parallax on mobile (janky, battery drain) */
   .parallax-element {
     transform: none !important;
+  }
+
+  /* Disable contact section background parallax on mobile */
+  .contact {
+    background-attachment: scroll;
   }
 
   /* Reduce floating animation on mobile */
