@@ -1849,10 +1849,25 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 
 /* ───── CONTACT ───── */
 .contact {
-  background: var(--slate);
+  background: var(--slate) url('uploads/hero_hcm_bg.png') center / cover no-repeat;
   color: var(--cream);
   position: relative;
   overflow: hidden;
+}
+
+/* Dark overlay for text readability */
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 53, 49, 0.72);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact > * {
+  position: relative;
+  z-index: 2;
 }
 .contact-grid {
   display: grid;
