@@ -440,8 +440,10 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   margin: 0;
   color: #FFFFFF;
   text-wrap: balance;
+  text-shadow:
+    0 0 10px rgba(200, 158, 47, 0.3),  /* Gold glow (#C89E2F) */
+    0 2px 4px rgba(0, 0, 0, 0.4);      /* Dark shadow */
 }
-/* Removed text-shadow from hero title */
 .hero h1 .accent {
   color: var(--gold);
   font-style: italic;
@@ -460,6 +462,9 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   color: #FFFFFF;
   margin-bottom: 56px;
   text-wrap: pretty;
+  text-shadow:
+    0 0 8px rgba(200, 158, 47, 0.25),  /* Gold glow (#C89E2F) */
+    0 1px 3px rgba(0, 0, 0, 0.3);      /* Dark shadow */
 }
 
 .hero-cta {
@@ -490,6 +495,36 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   font-weight: 600;
 }
 .btn-gold:hover { background: #E2C06A; color: var(--slate); border-color: #E2C06A; }
+
+/* Hero CTA button - white background with gold text for bright backgrounds */
+.btn-hero-cta {
+  padding: 20px 48px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  background: #FFFFFF;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  transition: all 250ms var(--ease-in-out);
+}
+
+.btn-hero-cta:hover,
+.btn-hero-cta:focus-visible {
+  background: var(--gold);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(200, 158, 47, 0.3);
+}
+
+.btn-hero-cta .arr {
+  display: inline-block;
+  transition: transform 250ms var(--ease-in-out);
+  margin-left: 4px;
+}
+
+.btn-hero-cta:hover .arr,
+.btn-hero-cta:focus-visible .arr {
+  transform: translateX(4px);
+}
 .btn-ghost {
   border: 1px solid rgba(44, 53, 49, .25);
   color: var(--ink);
