@@ -1479,10 +1479,17 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   height: clamp(340px, 50vw, 640px);
 }
 
-.df-mosaic-large,
-.df-mosaic-small {
+.df-mosaic-large {
   position: relative;
   overflow: hidden;
+  min-height: 0;
+}
+
+.df-mosaic-small {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  opacity: 1 !important;
 }
 
 .df-mosaic-large img,
@@ -1498,8 +1505,14 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 
 .df-mosaic-col {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   gap: 2px;
+  height: 100%;
+  min-height: 0;
+}
+
+.df-mosaic-small {
+  min-height: 0;
 }
 
 /* Micro-labels on photos */
@@ -1541,9 +1554,9 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   .df-stats-rail { grid-template-columns: repeat(2, 1fr); }
   .df-stat:nth-child(2) { border-right: 0; }
   .df-mosaic { grid-template-columns: 1fr; height: auto; }
-  .df-mosaic-col { grid-template-rows: 280px 280px; }
-  .df-mosaic-large { height: 380px; }
-  .df-mosaic-small { height: 280px; }
+  .df-mosaic-col { grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); height: 100%; min-height: 0; }
+  .df-mosaic-large { height: auto; }
+  .df-mosaic-small { height: auto; }
 }
 @media (max-width: 640px) {
   .df-title { font-size: clamp(72px, 20vw, 120px); }

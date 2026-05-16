@@ -995,6 +995,44 @@
     })();
   </script>
 
+  <!-- ── Debug df-mosaic styles ── -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const mosaic = document.querySelector('.df-mosaic');
+        const mosaicCol = document.querySelector('.df-mosaic-col');
+        const mosaicSmall = document.querySelectorAll('.df-mosaic-small');
+
+        console.log('=== DF-MOSAIC DEBUG ===');
+        console.log('Viewport:', window.innerWidth, 'x', window.innerHeight);
+        console.log('');
+
+        console.log('.df-mosaic:', {
+          height: mosaic?.style.height || 'not set',
+          computedHeight: mosaic ? getComputedStyle(mosaic).height : 'N/A',
+          computedDisplay: mosaic ? getComputedStyle(mosaic).display : 'N/A',
+          gridTemplateColumns: mosaic ? getComputedStyle(mosaic).gridTemplateColumns : 'N/A',
+        });
+        console.log('');
+
+        console.log('.df-mosaic-col:', {
+          height: mosaicCol?.style.height || 'not set',
+          computedHeight: mosaicCol ? getComputedStyle(mosaicCol).height : 'N/A',
+          computedGridTemplateRows: mosaicCol ? getComputedStyle(mosaicCol).gridTemplateRows : 'N/A',
+        });
+        console.log('');
+
+        mosaicSmall.forEach((el, idx) => {
+          console.log(`.df-mosaic-small[${idx}]:`, {
+            computedHeight: getComputedStyle(el).height,
+            computedDisplay: getComputedStyle(el).display,
+            offsetHeight: el.offsetHeight,
+          });
+        });
+      }, 500);
+    });
+  </script>
+
 </body>
 
 </html>
