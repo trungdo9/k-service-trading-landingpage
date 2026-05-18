@@ -878,7 +878,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   border-top: 1px solid var(--rule);
 }
 .metric { display: flex; flex-direction: column; gap: 8px; }
-.metric .m-val { font-family: var(--display); font-size: 42px; line-height: 1; color: var(--gold); }
+.metric .m-val { font-family: var(--display); font-size: clamp(48px, 6vw, 64px); line-height: 1; color: var(--gold); }
 .metric .m-lbl { font-size: 13px; line-height: 1.4; color: var(--ink-2); }
 
 /* business lines list */
@@ -945,24 +945,26 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background: var(--rule);
   border: 1px solid var(--rule);
 }
 .service-card {
   background: var(--paper);
-  padding: 36px 28px 32px;
+  padding: 48px 40px 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  min-height: 360px;
+  min-height: 380px;
   position: relative;
-  transition: background .4s ease;
-  cursor: default;
+  transition: all .4s var(--ease-out-cubic);
+  cursor: pointer;
 }
-.service-card:hover { background: var(--cream); }
+.service-card:hover { background: var(--cream); z-index: 2; }
 .service-card:hover .ico { color: var(--gold); transform: rotate(-4deg) scale(1.06); }
+.service-card:hover .more .arr { transform: translateX(6px); color: var(--gold); }
+.service-card .more .arr { transition: all .3s ease; }
 
 .service-card .ix {
   font-family: var(--mono);
@@ -971,14 +973,14 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   color: var(--ink-2);
 }
 .service-card .ico {
-  width: 44px; height: 44px;
+  width: 56px; height: 56px;
   color: var(--ink);
   transition: all .5s cubic-bezier(.7,.05,.3,1);
   margin-top: 8px;
 }
 .service-card .nm {
   font-family: var(--display);
-  font-size: 32px;
+  font-size: 36px;
   line-height: 1.05;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -986,9 +988,10 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   margin-top: auto;
 }
 .service-card .dn {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15.5px;
+  line-height: 1.6;
   color: var(--ink-2);
+  max-width: 48ch;
 }
 .service-card .more {
   font-family: var(--mono);
@@ -999,6 +1002,12 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   text-transform: uppercase;
   display: flex; gap: 8px; align-items: center;
   margin-top: 4px;
+}
+
+.card-divider {
+  height: 1px;
+  background: var(--gold);
+  margin: 8px 0;
 }
 
 /* ───── TRADING ───── */
@@ -1282,7 +1291,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   position: absolute;
   inset: 0;
   background:
-    url("uploads/annam-hero.png") center / cover no-repeat,
+    url("uploads/an-nam.webp") center / cover no-repeat,
     var(--slate-2);
   filter: brightness(0.72) saturate(1.1);
   transform-origin: center center;
@@ -1299,6 +1308,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 .df-banner-overlay {
   position: absolute;
   inset: 0;
+  display: none;
   background:
     linear-gradient(to top, rgba(22,29,26,.95) 0%, rgba(22,29,26,.5) 45%, rgba(22,29,26,.15) 75%, transparent 100%),
     linear-gradient(to right, rgba(22,29,26,.55) 0%, transparent 65%);
@@ -1794,8 +1804,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 }
 .eco-card .top.duty-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2px;
   background: #0F1412;
 }
@@ -2844,5 +2853,123 @@ footer .bar {
 
   .anim-hover-fade:hover {
     opacity: 1;
+  }
+}
+
+/* ───── VISION & MISSION SECTION ───── */
+.vision-mission {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--rule);
+}
+
+.vision-item {
+  padding: 28px;
+  background: rgba(200, 158, 47, 0.04);
+  border-radius: 8px;
+  border-left: 3px solid var(--gold);
+}
+
+.vision-item h3 {
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+
+.vision-item p {
+  margin: 0;
+}
+
+/* ───── STRATEGIC PARTNERSHIP SECTION ───── */
+.partnership-section {
+  display: grid;
+  gap: 56px;
+}
+
+.partnership-header {
+  max-width: 100%;
+}
+
+.partnership-header h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--ink);
+}
+
+.partnership-header h2 span {
+  color: var(--gold);
+}
+
+.partnership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 16px;
+}
+
+@media (max-width: 1200px) {
+  .partnership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.partnership-card {
+  padding: 36px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.partnership-card:hover {
+  background: var(--cream);
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px rgba(200, 158, 47, 0.1);
+  transform: translateY(-4px);
+}
+
+.partnership-icon {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.partnership-card h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 16px 0 12px 0;
+}
+
+.partnership-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .vision-mission {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .partnership-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .partnership-card {
+    padding: 28px;
   }
 }
