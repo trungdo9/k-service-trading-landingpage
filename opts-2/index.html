@@ -33,26 +33,7 @@
   <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
   <nav class="nav" id="siteNav">
     <a href="#top" class="emblem" aria-label="K Service Trading">
-      <svg class="emblem-mark" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- outer double rings -->
-        <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="1.5" />
-        <circle cx="40" cy="40" r="34" stroke="currentColor" stroke-width="0.8" opacity="0.6" />
-        <!-- 5 crown ticks -->
-        <circle cx="40" cy="9" r="1.4" fill="currentColor" />
-        <circle cx="28" cy="13" r="1.0" fill="currentColor" />
-        <circle cx="52" cy="13" r="1.0" fill="currentColor" />
-        <circle cx="18" cy="20" r="0.8" fill="currentColor" opacity="0.8" />
-        <circle cx="62" cy="20" r="0.8" fill="currentColor" opacity="0.8" />
-        <!-- K letterform -->
-        <text x="40" y="53" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="36"
-          font-weight="500" fill="currentColor" letter-spacing="0">K</text>
-        <!-- laurel arcs -->
-        <path d="M 16 56 Q 40 76 64 56" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.7" />
-        <path d="M 22 60 Q 40 72 58 60" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.5" />
-        <!-- center accent -->
-        <circle cx="40" cy="68" r="1.4" fill="currentColor" />
-      </svg>
-
+      <img src="uploads/logo.png" alt="K Service Trading" class="emblem-mark" />
     </a>
 
     <!-- Hamburger Button (mobile only) -->
@@ -258,34 +239,35 @@
   </section>
 
   <!-- ─────────── 01B — STRATEGIC PARTNERSHIP ─────────── -->
-  <section class="section paper wrap" data-screen-label="01B Strategic Partnership"
-    style="padding-bottom: clamp(48px, 6vw, 80px);">
-    <div class="partnership-section">
+  <section class="partnership-section-container" data-screen-label="01B Strategic Partnership" id="partnership">
+    <div class="partnership-section wrap">
       <div class="partnership-header reveal" style="--rd: .08s">
-        <h2 class="display" style="font-size: clamp(2.2rem, 5vw, 3rem);">
-          The Ideal Partner for <span style="color: var(--gold);">Investors</span>
+        <h2 class="display">
+          The Ideal Partner for <span>Investors</span>
         </h2>
-        <p style="font-size: 18px; color: var(--ink-2); line-height: 1.7; max-width: 70ch; margin-top: 24px;">
+        <p>
           Integrated multi-sector ecosystem with strategic advantages designed for long-term value creation.
         </p>
       </div>
 
       <div class="partnership-grid reveal-stagger reveal-stagger--tight">
 
-        <article class="partnership-card reveal" style="--index: 0; --rd: .16s">
-          <div class="partnership-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-              <path d="M2 22 12 12" />
-            </svg>
+        <article class="partnership-card featured reveal" style="--index: 0; --rd: .16s">
+          <img class="card-image-bg" src="uploads/partnership_agriculture.png" alt="Agricultural Innovation" />
+          <div class="card-content">
+            <div class="partnership-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                <path d="M2 22 12 12" />
+              </svg>
+            </div>
+            <h3 class="display" style="font-size: 1.5rem; margin-bottom: 12px;">Agricultural Innovation</h3>
+            <p>
+              Close collaboration with Korean smart farming technology providers (Smart Container systems), enabling
+              advanced hydroponics for premium produce like Geumsil strawberries and medicinal botanicals.
+            </p>
           </div>
-          <h3 class="display" style="font-size: 1.3rem; margin-top: 16px; margin-bottom: 12px;">Agricultural Innovation
-          </h3>
-          <p style="font-size: 16px; line-height: 1.7; color: var(--ink-2);">
-            Close collaboration with Korean smart farming technology providers (Smart Container systems), enabling
-            advanced hydroponics for premium produce like Geumsil strawberries and medicinal botanicals.
-          </p>
         </article>
 
         <article class="partnership-card reveal" style="--index: 1; --rd: .24s">
@@ -297,8 +279,8 @@
               <path d="M2 12h20" />
             </svg>
           </div>
-          <h3 class="display" style="font-size: 1.3rem; margin-top: 16px; margin-bottom: 12px;">Export Excellence</h3>
-          <p style="font-size: 16px; line-height: 1.7; color: var(--ink-2);">
+          <h3 class="display" style="font-size: 1.3rem; margin-bottom: 12px;">Export Excellence</h3>
+          <p>
             Partnership networks focused on export-standard quality products including organic Vietnamese rice,
             specialty crops, and sustainably-sourced seafood, meeting global certification standards.
           </p>
@@ -313,39 +295,59 @@
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
           </div>
-          <h3 class="display" style="font-size: 1.3rem; margin-top: 16px; margin-bottom: 12px;">Premium Distribution
-          </h3>
-          <p style="font-size: 16px; line-height: 1.7; color: var(--ink-2);">
+          <h3 class="display" style="font-size: 1.3rem; margin-bottom: 12px;">Premium Distribution</h3>
+          <p>
             Cooperation with leading cosmetics and consumer goods brands from Korea, Europe, and Japan, leveraging
             integrated cold-chain logistics across Vietnam and Southeast Asia.
           </p>
         </article>
 
-        <article class="partnership-card reveal" style="--index: 3; --rd: .4s">
-          <div class="partnership-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
-              <path d="M9 22v-4h6v4" />
-              <path d="M8 6h.01" />
-              <path d="M16 6h.01" />
-              <path d="M12 6h.01" />
-              <path d="M12 10h.01" />
-              <path d="M12 14h.01" />
-              <path d="M16 10h.01" />
-              <path d="M16 14h.01" />
-              <path d="M8 10h.01" />
-              <path d="M8 14h.01" />
-            </svg>
+        <article class="partnership-card featured reveal" style="--index: 3; --rd: .4s">
+          <img class="card-image-bg" src="uploads/partnership_hospitality.png" alt="Luxury Hospitality" />
+          <div class="card-content">
+            <div class="partnership-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+                <path d="M9 22v-4h6v4" />
+                <path d="M8 6h.01" />
+                <path d="M16 6h.01" />
+                <path d="M12 6h.01" />
+                <path d="M12 10h.01" />
+                <path d="M12 14h.01" />
+                <path d="M16 10h.01" />
+                <path d="M16 14h.01" />
+                <path d="M8 10h.01" />
+                <path d="M8 14h.01" />
+              </svg>
+            </div>
+            <h3 class="display" style="font-size: 1.5rem; margin-bottom: 12px;">Luxury Hospitality</h3>
+            <p>
+              Collaborations with 5-star resorts and boutique hospitality brands for curated experiences, wellness
+              programs, and cultural exchange across Vietnam, Thailand, Bali, and beyond.
+            </p>
           </div>
-          <h3 class="display" style="font-size: 1.3rem; margin-top: 16px; margin-bottom: 12px;">Luxury Hospitality</h3>
-          <p style="font-size: 16px; line-height: 1.7; color: var(--ink-2);">
-            Collaborations with 5-star resorts and boutique hospitality brands for curated experiences, wellness
-            programs, and cultural exchange across Vietnam, Thailand, Bali, and beyond.
-          </p>
         </article>
 
-        <article class="partnership-card reveal" style="--index: 4; --rd: .48s">
+        <article class="partnership-card featured reveal" style="--index: 4; --rd: .48s">
+          <img class="card-image-bg" src="uploads/partnership_investment.png" alt="Investment Alliances" />
+          <div class="card-content">
+            <div class="partnership-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+            <h3 class="display" style="font-size: 1.5rem; margin-bottom: 12px;">Investment Alliances</h3>
+            <p>
+              Institutional partnerships with development finance institutions and impact investors aligned with our 20%+
+              ROI mandate and sustainable development goals.
+            </p>
+          </div>
+        </article>
+
+        <article class="partnership-card reveal" style="--index: 5; --rd: .56s">
           <div class="partnership-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
               stroke-linejoin="round">
@@ -356,27 +358,10 @@
               <path d="M13 11v2" />
             </svg>
           </div>
-          <h3 class="display" style="font-size: 1.3rem; margin-top: 16px; margin-bottom: 12px;">Cultural &amp;
-            Entertainment</h3>
-          <p style="font-size: 16px; line-height: 1.7; color: var(--ink-2);">
+          <h3 class="display" style="font-size: 1.3rem; margin-bottom: 12px;">Cultural &amp; Entertainment</h3>
+          <p>
             Partnerships with international event producers and film companies for regional product launches, festivals,
             and VIP cultural events serving high-net-worth audiences.
-          </p>
-        </article>
-
-        <article class="partnership-card reveal" style="--index: 5; --rd: .56s">
-          <div class="partnership-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-              <polyline points="16 7 22 7 22 13" />
-            </svg>
-          </div>
-          <h3 class="display" style="font-size: 1.3rem; margin-top: 16px; margin-bottom: 12px;">Investment Alliances
-          </h3>
-          <p style="font-size: 16px; line-height: 1.7; color: var(--ink-2);">
-            Institutional partnerships with development finance institutions and impact investors aligned with our 20%+
-            ROI mandate and sustainable development goals.
           </p>
         </article>
 
@@ -696,6 +681,7 @@
 
 
         <div class="df-banner-headline">
+          <span class="df-eyebrow reveal" style="--rd:.02s; color: #D1B05A; display: block; margin-bottom: 12px; font-weight: 600;">K-DELTAFARM</span>
           <h2 class="df-title reveal" style="--rd:.05s">AN</h2>
           <h2 class="df-title df-title-italic reveal" style="--rd:.12s">NAM.</h2>
         </div>
@@ -883,7 +869,7 @@
       <div>
 
         <h2 class="display reveal" style="--rd: .1s">
-          Contact & <em>Office Information</em>
+          Contact & <em>Partnership</em>
         </h2>
         <p class="lede reveal" style="--rd: .2s; font-size: 22px;">
           Whether you are entering Vietnam, scaling a regional partnership, or seeking institutional capital — we'd be
@@ -905,7 +891,7 @@
           </div>
           <div class="info-block">
             <div class="lbl">Markets</div>
-            <div class="val">Vietnam · Korea · Thailand · Bali · Singapore · Hong Kong</div>
+            <div class="val">Vietnam · Korea · Thailand · Bali · Singapore · Hong Kong · Cambodia · Laos · USA · Europe · Australia</div>
           </div>
         </div>
       </div>
@@ -942,26 +928,7 @@
   <footer>
     <div class="top">
       <div class="brand">
-        <svg class="footer-emblem" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
-          <!-- outer double rings -->
-          <circle cx="40" cy="40" r="38" stroke="currentColor" stroke-width="1.5" />
-          <circle cx="40" cy="40" r="34" stroke="currentColor" stroke-width="0.8" opacity="0.6" />
-          <!-- 5 crown ticks -->
-          <circle cx="40" cy="9" r="1.4" fill="currentColor" />
-          <circle cx="28" cy="13" r="1.0" fill="currentColor" />
-          <circle cx="52" cy="13" r="1.0" fill="currentColor" />
-          <circle cx="18" cy="20" r="0.8" fill="currentColor" opacity="0.8" />
-          <circle cx="62" cy="20" r="0.8" fill="currentColor" opacity="0.8" />
-          <!-- K letterform -->
-          <text x="40" y="53" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="36"
-            font-weight="500" fill="currentColor" letter-spacing="0">K</text>
-          <!-- laurel arcs -->
-          <path d="M 16 56 Q 40 76 64 56" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.7" />
-          <path d="M 22 60 Q 40 72 58 60" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.5" />
-          <!-- center accent -->
-          <circle cx="40" cy="68" r="1.4" fill="currentColor" />
-        </svg>
+        <img class="footer-emblem" src="uploads/logo.png" alt="K Service Trading" />
         <div class="name">K Service Trading</div>
         <p>A strategic gateway between Vietnam, Korea and Southeast Asia — investment, trade, and eco-luxury
           hospitality, built for the long term.</p>
