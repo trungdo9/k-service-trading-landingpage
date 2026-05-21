@@ -284,12 +284,12 @@ button {
 .nav-menu {
   display: flex;
   gap: 40px;
-  font-family: var(--mono);
-  font-size: 14px;
-  letter-spacing: 0.16em;
+  font-family: var(--body);
+  font-size: 15px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
-  font-weight: 700;
+  font-weight: 600;
   text-shadow: none;
   align-items: center;
   padding: 0 8px;
@@ -372,13 +372,13 @@ button {
 .nav-menu .sub-menu a {
   display: block;
   padding: 14px 24px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
   transition: all 0.3s ease;
   white-space: nowrap;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
 }
 
 .nav-menu .sub-menu a::after {
@@ -2899,10 +2899,10 @@ button {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--body);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--ink-2);
 }
 
@@ -3169,7 +3169,7 @@ footer .top {
 footer h4 {
   margin: 0 0 18px;
   color: var(--gold);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.22em;
   font-weight: 600;
 }

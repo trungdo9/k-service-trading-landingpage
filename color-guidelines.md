@@ -88,3 +88,60 @@ Sự kết hợp giữa 2 định dạng font chữ tạo ra sự cân bằng gi
     * Thiết kế Solid (đổ màu nền nguyên khối) với màu Gold cho nút chính (Primary CTA).
     * Thiết kế Outline (chỉ có đường viền) cho các nút phụ trợ.
     * Tất cả các nút đều được bo góc nhẹ (Soft rounded radius).
+
+---
+
+## 6. Implementation Notes (Ghi chú Triển khai)
+
+### Navigation & Menu
+* **Main Menu (.nav-menu):**
+  * Font: `var(--body)` - Manrope (Sans-serif, dễ đọc)
+  * Font size: 15px
+  * Text transform: UPPERCASE
+  * Letter spacing: 0.08em
+  * Font weight: 600
+  * ✅ Tuân theo color-guidelines: Menu dùng body font
+
+* **Sub-Menu (.nav-menu .sub-menu a):**
+  * Font: `var(--body)` - Manrope
+  * Font size: 13px
+  * Letter spacing: 0 (loại bỏ spacing quá rộng)
+  * Font weight: 500
+  * Color opacity: 0.85 (tương phản tốt)
+
+### Eco-Card Components
+* **Eco-card List Items (.eco-card ul):**
+  * Font: `var(--body)` - Manrope (thay vì monospace)
+  * Font size: 13px
+  * Letter spacing: 0 (loại bỏ spacing)
+  * Text transform: none (sentence case)
+  * ✅ Cải thiện readability
+
+### Partnership Cards
+* **Partnership Headings (.partnership-card h3):**
+  * Font size: 1.7rem (đồng nhất tất cả)
+  * Font: `var(--display)` - Serif (Cormorant Garamond/Playfair Display)
+  * ✅ Tạo sự nhất quán trên cards
+
+### Typography - Lead/Lede Text
+* **Section Lead Text:**
+  * Font size: 19px (đồng nhất cho các lede paragraphs)
+  * Font: `var(--body)` - Manrope
+  * Line height: 1.6-1.7
+  * ✅ Cải thiện khả năng đọc trên các mô tả quan trọng
+
+### Best Practices Đã Áp Dụng
+✅ **Monospace font (var(--mono)) - CHỈ dùng cho:**
+  * Đặc thù technical content hoặc code
+  * ❌ KHÔNG dùng cho menu, list items, body text
+
+✅ **Body Font (var(--body) - Manrope):**
+  * Menu điều hướng
+  * List items, description text
+  * Secondary content
+  * Tối ưu readability trên đa thiết bị
+
+✅ **Display Font (var(--display) - Serif):**
+  * Tiêu đề chính (H1, H2, H3)
+  * Partnership card headings
+  * Highlights quan trọng
