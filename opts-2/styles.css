@@ -623,8 +623,8 @@ button {
   font-size: 13px;
   letter-spacing: 0.22em;
   font-weight: 700;
-  background: #FFFFFF;
-  color: var(--gold);
+  background: var(--gold);
+  color: #FFFFFF;
   border: 2px solid var(--gold);
   transition: all 250ms var(--ease-in-out);
 }
@@ -3507,6 +3507,12 @@ footer .bar {
   letter-spacing: -0.01em;
 }
 
+.partners-header h3 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 600;
+}
+
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -3515,59 +3521,38 @@ footer .bar {
   border: 1px solid var(--rule);
 }
 
-.partner-badge {
+.partner-logo-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-
-  padding: 24px;
+  padding: 20px;
   background: var(--paper);
   border: none;
-  border-radius: 0;
-
-  text-align: center;
+  border-radius: 4px;
+  min-height: 120px;
   transition: all .4s cubic-bezier(.7, .05, .3, 1);
-  cursor: pointer;
+  overflow: hidden;
 }
 
-.partner-icon {
-  font-size: 32px;
-  line-height: 1;
-  filter: grayscale(80%);
-  transition: filter .4s ease;
+.partner-logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  filter: grayscale(60%);
+  opacity: 0.85;
+  transition: filter .4s ease, opacity .4s ease, transform .4s ease;
+  object-fit: contain;
 }
 
-.partner-name {
-  font-family: var(--display);
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: -0.005em;
-}
-
-.partner-desc {
-  font-family: var(--mono);
-  font-size: 8.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-}
-
-.partner-badge:hover {
-  background: var(--cream);
-  transform: none;
-  box-shadow: none;
-}
-
-.partner-badge:hover .partner-icon {
+.partner-logo-item:hover img {
   filter: grayscale(0%);
-  transform: scale(1.1);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
-.partner-badge:hover .partner-name {
-  color: var(--gold);
+.partner-logo-item:hover {
+  background: var(--cream);
 }
 
 /* ───── Reveal animation ───── */
@@ -3662,7 +3647,7 @@ footer .bar {
   }
 
   .partners-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
