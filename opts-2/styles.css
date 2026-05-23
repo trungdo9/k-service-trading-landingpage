@@ -2742,6 +2742,13 @@ button {
   font-weight: 400;
 }
 
+.eco-head .col-r {
+  font-size: 16.5px;
+  color: var(--ink);
+  line-height: 1.6;
+  justify-self: start;
+}
+
 .eco-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -3754,7 +3761,8 @@ footer .bar {
   }
 
   .service-head .col-r,
-  .trading-head .col-r {
+  .trading-head .col-r,
+  .eco-head .col-r {
     justify-self: start;
   }
 
