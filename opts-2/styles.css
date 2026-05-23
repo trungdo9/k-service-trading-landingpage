@@ -1348,9 +1348,8 @@ button {
 .trading-head .col-r {
   font-size: 16.5px;
   color: var(--ink);
-  max-width: 42ch;
   line-height: 1.6;
-  justify-self: end;
+  justify-self: start;
 }
 
 .trading-grid {
