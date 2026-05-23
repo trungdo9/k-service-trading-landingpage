@@ -1077,9 +1077,9 @@ button {
 
 .k-grid h2 {
   font-family: var(--display);
-  font-size: clamp(36px, 5vw, 72px);
-  line-height: 1.02;
-  letter-spacing: -0.018em;
+  font-size: clamp(54px, 7vw, 112px);
+  line-height: 0.94;
+  letter-spacing: -0.028em;
   font-weight: 500;
   margin: 0;
   text-wrap: balance;
@@ -1239,11 +1239,28 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-origin: 50% 50%;
+  will-change: transform;
+  animation: services-banner-kenburns 16s ease-in-out infinite;
 }
 
-.services-banner-inner:hover img {
-  transform: scale(1.03);
+@keyframes services-banner-kenburns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.09) translate3d(-1.2%, -0.6%, 0);
+  }
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-banner-inner img {
+    animation: none;
+    transform: scale(1.04);
+  }
 }
 
 .services-banner-overlay {
@@ -1357,17 +1374,94 @@ button {
   margin-bottom: clamp(48px, 7vw, 80px);
 }
 
-.trading-head h2 {
-  font-family: var(--display);
-  font-size: clamp(40px, 5.4vw, 84px);
-  font-weight: 500;
-  line-height: 1.0;
-  letter-spacing: -0.02em;
-  margin: 0;
+.trading-head-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.trading-head h2 em {
+.trading-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
   color: var(--gold);
+  margin-bottom: 22px;
+}
+
+.trading-eyebrow .eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(200, 158, 47, 0.14);
+}
+
+.trading-eyebrow .eyebrow-num {
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.trading-eyebrow .eyebrow-rule {
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), rgba(200, 158, 47, 0));
+}
+
+.trading-eyebrow .eyebrow-text {
+  color: var(--gold);
+}
+
+.trading-head h2,
+.trading-title,
+.service-head h2,
+.eco-head h2,
+.partners-head h2,
+.feat-title {
+  font-family: var(--display);
+  font-size: clamp(54px, 7vw, 112px);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.028em;
+  margin: 0;
+  color: var(--ink);
+}
+
+.trading-head h2 em,
+.trading-title em,
+.service-head h2 em,
+.eco-head h2 em,
+.partners-head h2 em,
+.feat-title em {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(180deg, var(--gold) 0%, var(--gold-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.trading-underline,
+.feat-underline {
+  display: block;
+  width: 96px;
+  height: 2px;
+  margin-top: 28px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 60%, rgba(200, 158, 47, 0) 100%);
+  border-radius: 2px;
+}
+
+.partners-head .feat-underline {
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(90deg, rgba(200, 158, 47, 0) 0%, var(--gold) 50%, rgba(200, 158, 47, 0) 100%);
 }
 
 .trading-head .col-r {
@@ -3029,10 +3123,10 @@ button {
 
 .contact h2 {
   font-family: var(--display);
-  font-size: clamp(48px, 6.4vw, 100px);
+  font-size: clamp(54px, 7vw, 112px);
   font-weight: 500;
-  line-height: 0.96;
-  letter-spacing: -0.02em;
+  line-height: 0.94;
+  letter-spacing: -0.028em;
   margin: 0 0 32px;
   color: var(--cream);
 }
@@ -3542,7 +3636,6 @@ footer .bar {
 .partners-head h2 em {
   font-style: italic;
   color: var(--gold);
-  font-weight: 600;
 }
 
 .partners-slider-container {
@@ -4306,9 +4399,9 @@ footer .bar {
 
 .partnership-header h2 {
   font-family: var(--display);
-  font-size: clamp(36px, 5vw, 72px);
-  line-height: 1.02;
-  letter-spacing: -0.018em;
+  font-size: clamp(54px, 7vw, 112px);
+  line-height: 0.94;
+  letter-spacing: -0.028em;
   font-weight: 500;
   margin: 0;
   color: #2C3531; /* Deep Slate */
