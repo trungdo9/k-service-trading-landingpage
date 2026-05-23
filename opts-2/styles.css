@@ -1077,7 +1077,7 @@ button {
 
 .k-grid h2 {
   font-family: var(--display);
-  font-size: clamp(54px, 7vw, 112px);
+  font-size: clamp(54px, 7vw, 80px);
   line-height: 0.94;
   letter-spacing: -0.028em;
   font-weight: 500;
@@ -1765,7 +1765,7 @@ button {
 }
 
 .tcard.fmcg-card.big h3 {
-  font-size: clamp(54px, 6vw, 96px);
+  font-size: clamp(54px, 6vw, 80px);
   line-height: .98;
   letter-spacing: -0.018em;
   text-wrap: balance;
