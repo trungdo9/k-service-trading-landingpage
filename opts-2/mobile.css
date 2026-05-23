@@ -272,7 +272,7 @@
   .lines .line { border-right: 0; border-bottom: 1px solid var(--rule); padding: 16px 0; }
 
   /* Headings */
-  .service-head h2, .trading-head h2 { font-size: clamp(32px, 8vw, 56px); }
+  .service-head h2, .trading-head h2, .partners-head h2 { font-size: clamp(32px, 8vw, 56px); }
   .eco-head h2 { font-size: clamp(32px, 9vw, 56px); }
 
   /* AN NAM */
