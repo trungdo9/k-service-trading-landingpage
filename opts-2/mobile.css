@@ -243,8 +243,7 @@
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .form .row { grid-template-columns: 1fr; }
 
-  /* Partners */
-  .partners-grid { grid-template-columns: repeat(3, 1fr); }
+
 
   /* Footer */
   footer .top { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -292,8 +291,7 @@
   footer .top { grid-template-columns: 1fr; gap: 28px; }
   footer .bar { flex-direction: column; gap: 8px; text-align: center; }
 
-  /* Partners */
-  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+
 }
 
 /* ════════════════════════════
