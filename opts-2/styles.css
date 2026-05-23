@@ -1225,8 +1225,7 @@ button {
   font-size: 16.5px;
   line-height: 1.6;
   color: var(--ink-2);
-  max-width: 42ch;
-  justify-self: end;
+  justify-self: start;
 }
 
 .service-grid {
@@ -1243,7 +1242,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  min-height: 380px;
+  min-height: 410px;
   position: relative;
   transition: all .4s var(--ease-out-cubic);
   cursor: pointer;
@@ -1290,7 +1289,6 @@ button {
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin-top: auto;
 }
 
 .service-card .dn {
@@ -1310,7 +1308,7 @@ button {
   display: flex;
   gap: 8px;
   align-items: center;
-  margin-top: 4px;
+  margin-top: auto;
 }
 
 .card-divider {
