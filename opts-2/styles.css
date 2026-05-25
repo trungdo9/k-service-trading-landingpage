@@ -21,7 +21,7 @@
 
   /* ── Typography ── */
   --display: "Cormorant Garamond", "Playfair Display", "Lora", Georgia, serif;
-  --body: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --body: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* ── Spacing ── */
@@ -108,6 +108,34 @@ button {
 .italic {
   font-style: italic;
   font-weight: 400;
+}
+
+/* ── Supporting paragraph tiers (unified) ── */
+.text-lede {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  max-width: 65ch;
+}
+
+.text-block {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 60ch;
+}
+
+.text-card {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 48ch;
 }
 
 /* ── Mono metadata ── */
@@ -552,10 +580,14 @@ button {
 }
 
 .hero h1 .accent {
+  font-family: "Roboto", var(--body);
+  font-size: clamp(20px, 3.2vw, 60px);
   color: var(--gold-soft);
-  font-style: italic;
-  font-weight: 500;
+  /* font-style: italic; */
+  font-weight: 700;
+  letter-spacing: 0.02em;
   display: block;
+  white-space: nowrap;
 }
 
 .hero h1 .amp {
@@ -573,6 +605,17 @@ button {
   font-weight: 600;
 }
 
+.arr-chevron {
+  display: inline-block;
+  vertical-align: -1px;
+  margin-left: 10px;
+  transition: transform .35s cubic-bezier(.7, .05, .3, 1);
+}
+
+.hero-lede:hover .arr-chevron {
+  transform: translateX(4px);
+}
+
 .hero-cta {
   display: flex;
   gap: 14px;
@@ -587,7 +630,6 @@ button {
   gap: 12px;
   padding: 16px 24px;
   border-radius: 999px;
-  font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1096,22 +1138,13 @@ button {
 }
 
 .k-body p {
-  font-size: 17px;
-  line-height: 1.65;
-  margin: 0;
-  max-width: 56ch;
-  color: var(--ink);
-}
-
-.k-body p.lead {
-  font-family: var(--display);
-  font-size: clamp(20px, 2vw, 26px);
-  font-style: italic;
+  font-family: var(--body);
   font-weight: 400;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 60ch;
   color: var(--ink);
-  letter-spacing: -0.005em;
-  max-width: 38ch;
 }
 
 /* Key Metrics */
@@ -1213,9 +1246,12 @@ button {
 }
 
 .service-head .col-r {
-  font-size: 16.5px;
-  line-height: 1.6;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--ink-2);
+  max-width: 65ch;
   justify-self: start;
 }
 
@@ -1334,8 +1370,10 @@ button {
 }
 
 .service-card .dn {
-  font-size: 15.5px;
-  line-height: 1.6;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--ink-2);
   max-width: 48ch;
 }
@@ -1465,9 +1503,12 @@ button {
 }
 
 .trading-head .col-r {
-  font-size: 16.5px;
-  color: var(--ink);
-  line-height: 1.6;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  max-width: 65ch;
   justify-self: start;
 }
 
@@ -1577,21 +1618,20 @@ button {
 
 .tcard h3 {
   font-family: var(--display);
-  font-size: 40px;
+  font-size: clamp(40px, 4.5vw, 64px);
   font-weight: 500;
   line-height: 1.02;
   margin: 0 0 12px;
   letter-spacing: -0.012em;
 }
 
-.tcard.big h3 {
-  font-size: clamp(48px, 5vw, 76px);
-}
-
 .tcard.big .desc {
+  font-family: var(--body);
+  font-weight: 400;
   font-size: 16px;
-  max-width: 52ch;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 60ch;
 }
 
 .tcard h3 em {
@@ -1765,7 +1805,6 @@ button {
 }
 
 .tcard.fmcg-card.big h3 {
-  font-size: clamp(54px, 6vw, 80px);
   line-height: .98;
   letter-spacing: -0.018em;
   text-wrap: balance;
@@ -1800,8 +1839,12 @@ button {
 
 .tcard.fmcg-card .fmcg-text .desc {
   margin-top: 18px;
-  font-size: 15.5px;
-  max-width: 38ch;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 60ch;
 }
 
 .tcard.fmcg-card .fmcg-photo {
@@ -2092,15 +2135,17 @@ button {
 }
 
 .tcard.energy-card h3 {
-  font-size: clamp(36px, 3.6vw, 56px);
   margin-bottom: 14px;
   color: var(--ink);
 }
 
 .tcard.energy-card .desc {
-  color: var(--ink-2);
-  max-width: 56ch;
-  font-size: 15.5px;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 60ch;
 }
 
 .tcard.energy-card ul.tags li {
@@ -2862,9 +2907,12 @@ button {
 }
 
 .eco-head .col-r {
-  font-size: 16.5px;
-  color: var(--ink);
-  line-height: 1.6;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-2);
+  max-width: 65ch;
   justify-self: start;
 }
 
@@ -3276,7 +3324,6 @@ footer {
   background: var(--cream);
   color: var(--ink-2);
   padding: 64px var(--pad-x) 28px;
-  font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -3292,8 +3339,8 @@ footer .top {
 footer h4 {
   margin: 0 0 18px;
   color: var(--gold);
-  font-size: 13px;
-  letter-spacing: 0.22em;
+  font-size: 18px;
+  letter-spacing: 0.14em;
   font-weight: 600;
 }
 
@@ -4408,10 +4455,12 @@ footer .bar {
 }
 
 .partnership-header p {
-  font-size: 18px;
-  color: #6B7970; /* Light Slate */
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--ink-2);
   line-height: 1.7;
-  max-width: 70ch;
+  max-width: 65ch;
   margin: 24px 0 0 0;
 }
 
@@ -4522,9 +4571,12 @@ footer .bar {
 }
 
 .partnership-card p {
+  font-family: var(--body);
+  font-weight: 400;
   font-size: 15px;
   line-height: 1.65;
-  color: #6B7970; /* Light Slate */
+  color: var(--ink-2);
+  max-width: 48ch;
   margin: 0;
 }
 

@@ -61,7 +61,6 @@
   margin-bottom: 8px;
 }
 .nav-mobile-brand {
-  font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.22em;
   color: rgba(209, 176, 90, 0.8);
